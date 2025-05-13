@@ -1,0 +1,15 @@
+# Ignore virtual environments and environments
+venv/
+.env
+
+# Ignore temporary files
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+
+# Ignore HTML maps (optional to track separately)
+*.html
+
+# Ignore data cache
+data/raw/
+maps/
