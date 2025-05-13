@@ -1,0 +1,12 @@
+name: chifoodscape
+dependencies:
+  - python=3.10
+  - pandas
+  - geopandas
+  - folium
+  - matplotlib
+  - jupyterlab
+  - seaborn
+  - requests
+  - scikit-learn
+  - notebook
