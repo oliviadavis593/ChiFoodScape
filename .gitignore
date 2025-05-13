@@ -3,9 +3,6 @@
 __pycache__/
 .env
 .DS_Store
-*.html
-data/raw/
-maps/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
