@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🛒 ChiFoodScape: Mapping Real Food Access in Chicago
 
 ## 🧭 Overview
@@ -122,7 +121,3 @@ Together, these maps reveal where the **official data misrepresents actual acces
 ---
 
 *Built with public data. Inspired by public good.*
-=======
-# ChiFoodScape
-Interactive map of Chicago grocery access using city food inspection data
->>>>>>> 28d7ae400fbaab9f90517b9056fb7248cb9acd53
