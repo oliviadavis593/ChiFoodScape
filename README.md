@@ -10,7 +10,7 @@ Using open data, spatial joins, and visual storytelling, the project aims to:
 - Help residents, nonprofits, and city leaders target **food justice interventions**
 
 🔗 **Live Map Preview**  
-Explore the interactive grocery store map [here](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html).
+Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/).
 
 🗺️ **v1 Map**  
 v1             |  v1
