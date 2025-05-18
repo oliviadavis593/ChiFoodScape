@@ -12,6 +12,9 @@ Using open data, spatial joins, and visual storytelling, the project aims to:
 🔗 **Live Map Preview**  
 Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/).
 
+🔗 **Live Community Choropleth**
+Visualize store density by community area: [Choropleth Map](Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/))
+
 🗺️ **v1 Map**  
 v1             |  v1
 :-------------------------:|:-------------------------:
@@ -67,6 +70,8 @@ Together, these maps reveal where the **official data misrepresents actual acces
 | `updated_grocery_stores.csv`             | Final deduplicated dataset for mapping                      |
 | `grocery_stores_chicago_map.html`        | Interactive map (green = real, red = junk, gray = unknown)  |
 | `grocery_stats_by_zip.csv`               | Summary of store counts by ZIP                              |
+| `grocery_choropleth_by_area.html`        | Choropleth map showing store counts per community area       |
+
 
 ---
 
@@ -76,8 +81,8 @@ Together, these maps reveal where the **official data misrepresents actual acces
 - [x] Deduplicated per store location
 - [x] Built interactive HTML map
 - [x] Summarized counts by ZIP
-- [ ] Add tooltip + popup interactivity *(in progress)*
-- [ ] Add community area-level grouping *(coming soon)*
+- [x] Add tooltip + popup interactivity *(in progress)*
+- [x] Add community area-level grouping *(coming soon)*
 
 ---
 
