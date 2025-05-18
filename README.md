@@ -97,6 +97,23 @@ Together, these maps reveal where the **official data misrepresents actual acces
 
 4. **🌐 Export & Share**
    - Save final `grocery_stores_chicago_map.html` for easy distribution
+   - 
+
+🔹 **Phase 1 – MVP Finish Line**
+ Join stores with community areas 
+
+ - Add choropleth layers for store count per area (density or per capita if you later have pop data)
+
+ - Improve map UX: add popup w/ inspection result, store type, maybe emoji/icon updates
+
+ - Re-export public-facing HTML map (grocery_store_map_by_area.html)
+
+🔹 **Phase 2 – Parallel Refinement**
+ - Chip away at unclassified stores when convenient (especially by ZIP or known gaps)
+
+ - Improve keyword logic (e.g. Whole Foods #123 or Costco Wholesale)
+
+ - Add license type or external lists
 
 ---
 
