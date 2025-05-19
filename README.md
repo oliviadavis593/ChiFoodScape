@@ -12,14 +12,14 @@ Using open data, spatial joins, and visual storytelling, the project aims to:
 🔗 **Live Map Preview**  
 Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html)
 
-🔗 **Live Community Choropleth**  
-Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)
-
-
 🗺️ **v1 Interactive Store Map**  
 v1             |  v1
 :-------------------------:|:-------------------------:
 <img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
+
+🔗 **Live Community Choropleth**  
+Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)
+
 
 🗺️ **v1 Choropleth Map** 
 Map
