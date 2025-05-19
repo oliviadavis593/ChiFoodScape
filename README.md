@@ -16,10 +16,16 @@ Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593
 Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)
 
 
-🗺️ **v1 Map**  
+🗺️ **v1 Interactive Store Map**  
 v1             |  v1
 :-------------------------:|:-------------------------:
 <img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
+
+🗺️ **v1 Choropleth Map** 
+Map
+:-------------------------:
+<img width="779" alt="Screenshot 2025-05-18 at 7 22 51 PM" src="https://github.com/user-attachments/assets/f41a054e-95a4-499e-bc36-6127816995a9" />
+
 
 ---
 
