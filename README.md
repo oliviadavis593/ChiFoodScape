@@ -12,14 +12,22 @@ Using open data, spatial joins, and visual storytelling, the project aims to:
 🔗 **Live Map Preview**  
 Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html)
 
+
+🗺️ **v1 Interactive Store Map**  
+v1             |  v1
+:-------------------------:|:-------------------------:
+<img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
+
 🔗 **Live Community Choropleth**  
 Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)
 
 
-🗺️ **v1 Map**  
-v1             |  v1
-:-------------------------:|:-------------------------:
-<img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
+🗺️ **v1 Choropleth Map** 
+Map
+:-------------------------:
+<img width="893" alt="Screenshot 2025-05-23 at 10 08 25 PM" src="https://github.com/user-attachments/assets/aed26ad0-bea7-423b-a275-c6c5400abc40" />
+
+
 
 ---
 
@@ -55,24 +63,29 @@ Together, these maps reveal where the **official data misrepresents actual acces
 | `01_data_cleaning.ipynb`               | Cleans raw food inspection data (drops nulls, bad coordinates)         |
 | `01b_clean_grocery_stores.ipynb`       | Adds `IS_REAL_GROCERY` / `IS_JUNK_STORE` flags based on store names    |
 | `01d_clean_grocery_stores.ipynb`       | Merges clean inspections + flags, removes duplicates for final dataset |
+| `01e_clean_filtered_grocery_stores.ipynb` | Filters stores based on specific logic refinements       |
+| `02_access_score.ipynb`                | Scoring logic for future equity metrics                   |
 | `03_visualizations.ipynb`              | Builds map using Folium with color-coded markers + tooltips            |
 | `03_visualizations_by_zip_v1.ipynb`    | Groups stores by ZIP and saves summary CSV                             |
-| `02_access_score.ipynb`                | *(Optional)* Scoring logic for future equity metrics                   |
-| `clean_urban_ag_sites.ipynb`           | *(Optional)* Cleans urban farm dataset for later overlay               |
+| `04_geo_join_by_area.ipynb`            | Joins store data to community area shapefile (GeoJSON)                 |
+| `05_unclassified_review.ipynb`         | Lists unclassified stores for manual review and reclassification       |
+| `05b_review_real_grocery_stores.ipynb` | Audits stores flagged as "real groceries" for false positives  |
+| `06_choropleth_by_area.ipynb`          | Creates choropleth map of grocery density by community area            |
+| `clean_urban_ag_sites.ipynb`           | Cleans urban farm dataset for later overlay               |
 
 ---
 
 ## 📦 Output Files
 
-| File                                      | Description                                                  |
-|-------------------------------------------|--------------------------------------------------------------|
-| `food_inspections_cleaned.csv`           | Cleaned inspection dataset                                  |
-| `grocery_stores_labeled.csv`             | Inspection data + real/junk flags                           |
-| `updated_grocery_stores.csv`             | Final deduplicated dataset for mapping                      |
-| `grocery_stores_chicago_map.html`        | Interactive map (green = real, red = junk, gray = unknown)  |
-| `grocery_stats_by_zip.csv`               | Summary of store counts by ZIP                              |
-| `grocery_choropleth_by_area.html`        | Choropleth map showing store counts per community area       |
-
+| File                                      | Description                                                                 |
+|------------------------------------------|-----------------------------------------------------------------------------|
+| `food_inspections_cleaned.csv`           | Cleaned food inspection data from the Chicago Data Portal                  |
+| `grocery_stores_labeled.csv`             | Inspection data with real/junk classification flags                        |
+| `grocery_stores_cleaned_v1.csv`          | Deduplicated + cleaned dataset of labeled stores used for mapping          |
+| `grocery_stores_with_community.csv`      | Grocery dataset spatially joined with community areas                      |
+| `grocery_stats_by_zip.csv`               | Summary counts of store types by ZIP code                                  |
+| `grocery_stores_chicago_map_v1.html`     | Interactive map (green = real, red = junk, gray = unknown)                 |
+| `grocery_choropleth_by_area.html`        | Choropleth map showing store counts per community area                     |
 
 ---
 
@@ -80,10 +93,23 @@ Together, these maps reveal where the **official data misrepresents actual acces
 
 - [x] Cleaned and labeled store data
 - [x] Deduplicated per store location
-- [x] Built interactive HTML map
-- [x] Summarized counts by ZIP
-- [x] Add tooltip + popup interactivity *(in progress)*
-- [x] Add community area-level grouping *(coming soon)*
+- [x] Built interactive HTML map with color-coded markers
+- [x] Added tooltip + popup interactivity to marker map
+- [x] Summarized counts by ZIP code
+- [x] Spatially joined grocery stores with community areas
+- [x] Created community-level choropleth map of store density
+- [ ] Calculate summary stats (real vs. junk by neighborhood)
+- [ ] Systematically review unclassified stores
+- [ ] Final round of junk/real grocery keyword improvements
+- [ ] Identify food access gaps using food desert overlays
+- [ ] Optionally add urban farm or compost site overlays
+
+### 🔜 Phase 5: Analysis & UX Upgrades
+
+- [ ] Filter: Only show stores that passed inspection
+- [ ] Display violations in popups or tooltips
+- [ ] Add grocery access scoring layer
+- [ ] Publish full app via Streamlit, Flask, or GitHub Pages
 
 ---
 
@@ -103,16 +129,34 @@ Together, these maps reveal where the **official data misrepresents actual acces
 
 4. **🌐 Export & Share**
    - Save final `grocery_stores_chicago_map.html` for easy distribution
+  
+🔹 **Phase 1 – MVP Finish Line**
+ Join stores with community areas 
+
+ - Add choropleth layers for store count per area (density or per capita if later we have pop data)
+
+ - Improve map UX: add popup w/ inspection result, store type, maybe emoji/icon updates
+
+ - Re-export public-facing HTML map (grocery_store_map_by_area.html)
+
+🔹 **Phase 2 – Parallel Refinement**
+ - Chip away at unclassified stores when convenient (especially by ZIP or known gaps)
+
+ - Improve keyword logic (e.g. Whole Foods #123 or Costco Wholesale)
+
+ - Add license type or external lists
 
 ---
 
 ## 🧠 Future Features (V2+ Vision)
 
-- Add food desert overlays (via USDA or built from scratch)
-- Join compost drop-off sites and urban farms
+- Add food desert overlays (e.g. USDA-defined or custom-calculated)
+- Incorporate compost drop-off and urban farm layers
 - Build “food access scores” per neighborhood
-- Allow filtering by inspection result (Pass/Fail)
-- Compare public claims vs. on-the-ground reality
+- Allow filtering by inspection result (e.g. Pass/Fail/Out of Business)
+- Compare official licensing data vs. on-the-ground availability
+- Add filter options and search tools in the interactive maps
+- Explore a mobile-optimized public-facing dashboard
 
 ---
 
@@ -125,9 +169,9 @@ Together, these maps reveal where the **official data misrepresents actual acces
 
 ---
 
-## ✏️ Notes
+## Notes
 
-- You can update `grocery_keywords` and `junk_keywords` inside `01b_clean_grocery_stores.ipynb`
+- Can update `grocery_keywords` and `junk_keywords` inside `01b_clean_grocery_stores.ipynb`
 - Data transformations use **Pandas**
 - Maps are rendered with **Folium** (Leaflet.js)
 - Stats grouped via **Pandas**, future spatial joins may use **GeoPandas**
