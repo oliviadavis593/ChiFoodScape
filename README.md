@@ -19,7 +19,7 @@ v1             |  v1
 <img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
 
 🔗 **Live Community Choropleth**  
-Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)
+Visualize store density by community area: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area_v2.html)
 
 
 🗺️ **v1 Choropleth Map** 
@@ -85,7 +85,7 @@ Together, these maps reveal where the **official data misrepresents actual acces
 | `grocery_stores_with_community.csv`      | Grocery dataset spatially joined with community areas                      |
 | `grocery_stats_by_zip.csv`               | Summary counts of store types by ZIP code                                  |
 | `grocery_stores_chicago_map_v1.html`     | Interactive map (green = real, red = junk, gray = unknown)                 |
-| `grocery_choropleth_by_area.html`        | Choropleth map showing store counts per community area                     |
+| `grocery_choropleth_by_area_v2.html`        | Choropleth map showing store counts per community area                     |
 
 ---
 
