@@ -25,7 +25,8 @@ Visualize store density by community area: [Choropleth Map](https://oliviadavis5
 🗺️ **v1 Choropleth Map** 
 Map
 :-------------------------:
-<img width="779" alt="Screenshot 2025-05-18 at 7 22 51 PM" src="https://github.com/user-attachments/assets/f41a054e-95a4-499e-bc36-6127816995a9" />
+<img width="893" alt="Screenshot 2025-05-23 at 10 08 25 PM" src="https://github.com/user-attachments/assets/aed26ad0-bea7-423b-a275-c6c5400abc40" />
+
 
 
 ---
