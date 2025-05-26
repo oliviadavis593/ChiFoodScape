@@ -28,6 +28,9 @@ Map
 <img width="893" alt="Screenshot 2025-05-23 at 10 08 25 PM" src="https://github.com/user-attachments/assets/aed26ad0-bea7-423b-a275-c6c5400abc40" />
 
 
+🔗 **Choropleth Map with Access Scores**  
+Visualize community access scores with labels: [Access Score Choropleth](https://oliviadavis593.github.io/ChiFoodScape/access_score_choropleth.html)
+
 
 ---
 
