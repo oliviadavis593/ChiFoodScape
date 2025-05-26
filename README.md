@@ -19,9 +19,9 @@ v1             |  v1
 <img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
 
 🔗 **Choropleth Map by Community Area**  
-View updated store density map: [Choropleth Map v2](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)  
+View updated store density map: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)  
 
-🗺️ **v1 Choropleth Map**  
+🗺️ **Choropleth Map**  
 | Map |
 |-----|
 | ![Screenshot](https://github.com/user-attachments/assets/aed26ad0-bea7-423b-a275-c6c5400abc40) |
@@ -31,7 +31,7 @@ View grocery access scores by community area: [Access Score Choropleth](https://
 
 | Map |
 |-----|
-| ![Access Score Screenshot](https://github.com/user-attachments/assets/your-access-score-map-screenshot.png) |
+<img width="786" alt="Screenshot 2025-05-25 at 10 17 46 AM" src="https://github.com/user-attachments/assets/cf40d511-1647-4e99-9de9-20336b7ddaf4" />
 
 ---
 
