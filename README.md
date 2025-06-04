@@ -8,29 +8,30 @@ Using open data, spatial joins, and visual storytelling, the project aims to:
 - Show which neighborhoods are structurally excluded from **fresh food**
 - Visualize which areas are underserved by **composting and urban agriculture**
 - Help residents, nonprofits, and city leaders target **food justice interventions**
+ 
+ChiFoodScape Website (All Maps): [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape)
 
-🔗 **Live Map Preview**  
-Explore the interactive grocery store map: [ChiFoodScape](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html)
-
-🗺️ **v1 Interactive Store Map**  
-v1             |  v1  
+🔗 **v1 Interactive Store Mapw**  
+Explore the interactive grocery store map: [Store Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html)
+ 
+Store Map v1             |  Store Map v1  
 :-------------------------:|:-------------------------:  
 <img width="1105" alt="Screenshot 2025-05-13 at 8 13 50 PM" src="https://github.com/user-attachments/assets/a3e376b4-f9b8-4afd-877d-16c6fc171f6f" /> | <img width="1064" alt="Screenshot 2025-05-13 at 8 13 28 PM" src="https://github.com/user-attachments/assets/a9a31ea1-d634-4c70-bd12-11b05eb727ca" />
 
 🔗 **Choropleth Map by Community Area**  
 View updated store density map: [Choropleth Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_choropleth_by_area.html)  
 
-🗺️ **Choropleth Map**  
-| Map |
+| Choropleth Map |
 |-----|
 | ![Screenshot](https://github.com/user-attachments/assets/aed26ad0-bea7-423b-a275-c6c5400abc40) |
 
 🔗 **Choropleth Access Score Map**  
 View grocery access scores by community area: [Access Score Choropleth](https://oliviadavis593.github.io/ChiFoodScape/access_score_choropleth.html)
 
-| Access Score Map |
+|  Access Score Map |
 |-----|
-<img width="786" alt="Screenshot 2025-05-25 at 10 17 46 AM" src="https://github.com/user-attachments/assets/cf40d511-1647-4e99-9de9-20336b7ddaf4" />
+<img width="1451" alt="Screenshot 2025-06-03 at 11 15 49 PM" src="https://github.com/user-attachments/assets/e3dc5584-c3dd-4d51-8386-89d741275bf8" />
+
 
 ---
 
