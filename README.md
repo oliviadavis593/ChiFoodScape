@@ -50,6 +50,7 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 - Deduplicates by address/name
 - Allows manual classification of edge cases
 - Fully reviewed unclassified stores by neighborhood
+- Fully reviewed junk stores by neighborhood
 - Generates interactive maps + access scores
 - Exports ZIP and community area summaries
 
@@ -63,9 +64,11 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 | `03_visualizations.ipynb`                    | Build interactive map with clustering |
 | `04_geo_join_by_area.ipynb`                  | Spatially join stores to community areas |
 | `05_unclassified_review.ipynb`               | Export unclassified stores per neighborhood for review |
+| `05_junk_review.ipynb`                       | Export junk stores per neighborhood for review |
 | `06_choropleth_by_area.ipynb`                | Create choropleth showing store density |
 | `07_generate_access_scores.ipynb`            | Render choropleth of access scores per area |
-| `07_merge_unclassified_reviewed_csvs.ipynb`  | Merge manually reviewed classifications |
+| `07_merge_unclassified_reviewed_csvs.ipynb`  | Merge manually reviewed unclassified stores |
+| `07_merge_junk_reviewed_csvs.ipynb`          | Merge manually reviewied junk stores |
 | `clean_urban_ag_sites.ipynb`                 | Refine and clean urban agriculture site data |
 
 
@@ -139,7 +142,7 @@ Each map relies on a chain of notebooks. Here's how to run the full pipeline:
 - [x] Reviewed all previously unclassified stores
 - [x] Merged reviewed store classifications
 - [x] Updated all map outputs
-- [ ] Junk store re-review
+- [x] Junk store re-review
 - [ ] Real store re-review
 - [ ] Food access gap analysis
 - [ ] Introduce helper-text across maps for users (e.g., MarkerCluster coloring reasoning)
