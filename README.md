@@ -54,6 +54,53 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 - Generates interactive maps + access scores
 - Exports ZIP and community area summaries
 
+## ✅ Current Status
+- [x] Clean & label data
+- [x] Deduplicate
+- [x] Interactive map w/ tooltips
+- [x] Choropleth by community area
+- [x] Access score choropleth
+- [x] Reviewed all previously unclassified stores
+- [x] Merged reviewed store classifications
+- [x] Updated all map outputs
+- [x] Junk store re-review
+- [x] Real store re-review
+- [ ] Food access gap analysis
+- [ ] Introduce helper-text across maps for users (e.g., MarkerCluster coloring reasoning)
+
+## 🧠 Future Features (V2+ Vision)
+
+- Implement street-network access scoring (1 mile / 20 min isochrones → residential grid → % coverage → bucket into Very Low→Excellent)   
+- Overlay food deserts (e.g., USDA-defined or custom)  
+- Incorporate compost drop-off sites and urban farms into the map  
+- Compare official licensing data to observed reality (spot mismatches)  
+- Enable inspection result filtering (e.g., Pass/Fail/Out of Business)  
+- Add filter and search tools to the map UI (e.g., by ZIP, store name)  
+- Explore mobile-optimized, public-facing dashboard version  
+- Integrate user-facing explanations into maps (e.g., what access scores mean, marker color logic)  
+
+
+## 🔗 V2: Network-Based Access Scoring
+
+In **v2**, we’ll move from community-averaged counts to a **street-network coverage** model, ensuring we capture true walk- or roll-access to groceries:
+
+| Step                                  | Description                                                                                                                                          |
+|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. Build 1-mile isochrones            | For each store point, generate a walking isochrone (e.g., 1 mile or 20 min) using **OSMnx** or an Isochrone API.                                      |
+| 2. Generate residential grid          | Sample points (e.g., every 200 m) across each community polygon to approximate where people live.                                                    |
+| 3. Compute coverage                   | Spatially join grid → isochrones to identify which points fall **inside** any store’s service area.                                                  |
+| 4. Derive coverage metrics            | Calculate, per community: <br>• **% Covered** = covered_points / total_points<br>• (Optional) Avg. network distance to nearest N stores.              |
+| 5. Bucket into five access categories | Apply thresholds to “% Covered” (e.g., <20% = Very Low, 20–40% = Low, …, >80% = Excellent) so each area’s score reflects real street-level access.    |
+| 6. Visualize new V2 choropleth        | Update `07_generate_access_scores.ipynb` (or create `08_network_score.ipynb`) to render the network-based score field in the existing choropleth style. |
+
+> **Why this matters**  
+> Instead of assuming “Logan Square is Excellent” because it has 22 stores, we’ll show exactly which streets and blocks fall outside a 1-mile walk—surface-level proof of micro-“food deserts” in otherwise green areas.
+
+---
+
+*Built with public data. Inspired by public good.*  
+
+
 ---
 
 ##  Project Structure
@@ -65,6 +112,7 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 | `04_geo_join_by_area.ipynb`                  | Spatially join stores to community areas |
 | `05_unclassified_review.ipynb`               | Export unclassified stores per neighborhood for review |
 | `05_junk_review.ipynb`                       | Export junk stores per neighborhood for review |
+| `05_real_review.ipynb`                       | Export real stores per neighborhood for review
 | `06_choropleth_by_area.ipynb`                | Create choropleth showing store density |
 | `07_generate_access_scores.ipynb`            | Render choropleth of access scores per area |
 | `07_merge_unclassified_reviewed_csvs.ipynb`  | Merge manually reviewed unclassified stores |
@@ -78,7 +126,7 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 | File                                | Description |
 |------------------------------------|-------------|
 | `grocery_stores_chicago_map_v1.html` | Interactive map |
-| `grocery_choropleth_by_area.html`    | Updated store density map |
+| `grocery_choropleth_by_area.html`    | Store density map |
 | `access_score_choropleth.html`       | Access score map |
 | `grocery_stores_cleaned_v1.csv`      | Fully deduplicated + classified dataset |
 | `community_area_scores.csv`          | Access score table by community area |
@@ -129,35 +177,6 @@ Each map relies on a chain of notebooks. Here's how to run the full pipeline:
 - All `.html` maps are saved to `/docs/` and served via GitHub Pages
 - Make sure you commit new versions of those files after running
 - Test locally by opening `docs/index.html` or pushing live to GitHub
-
----
-
-
-## ✅ Current Status
-- [x] Clean & label data
-- [x] Deduplicate
-- [x] Interactive map w/ tooltips
-- [x] Choropleth by community area
-- [x] Access score choropleth
-- [x] Reviewed all previously unclassified stores
-- [x] Merged reviewed store classifications
-- [x] Updated all map outputs
-- [x] Junk store re-review
-- [ ] Real store re-review
-- [ ] Food access gap analysis
-- [ ] Introduce helper-text across maps for users (e.g., MarkerCluster coloring reasoning)
-
----
-
-## 🧠 Future Features (V2+ Vision)
-- Add food access scores normalized by population (per capita)
-- Overlay food deserts (e.g., USDA-defined or custom)
-- Incorporate compost drop-off sites and urban farms into the map
-- Compare official licensing data to observed reality (spot mismatches)
-- Enable inspection result filtering (e.g., Pass/Fail/Out of Business)
-- Add filter and search tools to the map UI (e.g., by ZIP, store name)
-- Explore mobile-optimized, public-facing dashboard version
-- Integrate user-facing explanations into maps (e.g., what access scores mean, marker color logic)
 
 ---
 
