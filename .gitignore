@@ -11,5 +11,5 @@ maps/
 # OS/system clutter
 .DS_Store
 
-# Optional: block HTML map outputs
-*.html
+docs/config.js
+

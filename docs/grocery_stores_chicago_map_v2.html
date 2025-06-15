@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ChiFoodScape: Grocery Stores by Neighborhood</title>
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no"/>
+  <style>
+    html, body { height:100%; margin:0; padding:0 }
+    #map { height:100% }
+    .controls {
+      position:absolute; top:10px; left:10px;
+      background:white; padding:8px; border-radius:4px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.3);
+      font-family:sans-serif; z-index:5;
+    }
+    .controls label { display:block; margin-bottom:6px; cursor:pointer; }
+  </style>
+
+  <!-- MarkerClustererPlus -->
+  <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+  <!-- config stub (defines window.GOOGLE_MAPS_API_KEY) -->
+  <script src="config.js"></script>
+  <!--  dynamic loader for the Maps API -->
+  <script>
+    function loadGoogleMaps() {
+      const s = document.createElement("script");
+      s.src = `https://maps.googleapis.com/maps/api/js?key=${window.GOOGLE_MAPS_API_KEY}`;
+      s.async = true;
+      s.defer = true;
+      s.onload = initMap;
+      document.head.appendChild(s);
+    }
+    window.onload = () => {
+      loadGoogleMaps();
+    };
+  </script>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="controls">
+    <label><input type="checkbox" value="real"  checked> 🟢 Real Grocery Stores</label>
+    <label><input type="checkbox" value="junk"  checked> 🔴 Junk Stores</label>
+    <label><input type="checkbox" value="other" checked> ⚪ Unclassified</label>
+  </div>
+  <script>
+    let map, markerCluster, selectedFeature=null, currentCommunity=null;
+    const markers = { real:[], junk:[], other:[] };
+    const defaultStyle = { fillOpacity:0, strokeColor:'#444', strokeWeight:2 };
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center:{lat:41.8781,lng:-87.6298}, zoom:11,
+        styles:[{ featureType:"poi",stylers:[{visibility:"off"}] }]
+      });
+
+      // polygons
+      map.data.loadGeoJson('community_areas.geojson');
+      map.data.setStyle(f=>defaultStyle);
+      map.data.addListener('click', e => {
+        const comm = e.feature.getProperty('community');
+        if (currentCommunity===comm) return clearSelection();
+        selectCommunity(e.feature, comm);
+      });
+
+      // markers
+      fetch('grocery_stores_cleaned_v3.json')
+       .then(r=>r.json()).then(data=>{
+         data.forEach(s=>{
+           const pos = {lat:+s.Latitude,lng:+s.Longitude};
+           const cat = s.IS_REAL_GROCERY?'real':s.IS_JUNK_STORE?'junk':'other';
+           const url = cat==='real'
+             ? 'https://img.icons8.com/fluency/48/000000/shopping-cart.png'
+             : cat==='junk'
+               ? 'https://img.icons8.com/fluency/48/000000/garbage.png'
+               : 'https://img.icons8.com/fluency/48/000000/help.png';
+           const m = new google.maps.Marker({
+             position:pos,
+             icon:{url,scaledSize:new google.maps.Size(24,24)}
+           });
+           m.community = s.Community;
+           m.addListener('click',()=>new google.maps.InfoWindow({
+             content:`<b>${s['DBA Name']}</b><br>${s.Address}`
+           }).open(map,m));
+           markers[cat].push(m);
+         });
+         markerCluster = new MarkerClusterer(
+           map,
+           [...markers.real,...markers.junk,...markers.other],
+           {imagePath:
+             'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+           }
+         );
+         markerCluster.clearMarkers();
+       });
+
+      // toggles
+      document.querySelectorAll('.controls input')
+        .forEach(chk=>chk.addEventListener('change', refreshMarkers));
+    }
+
+    function selectCommunity(feature, comm) {
+      currentCommunity = comm;
+      if (selectedFeature) map.data.revertStyle(selectedFeature);
+      map.data.overrideStyle(feature,{
+        fillOpacity:0.2,fillColor:'#f00',strokeColor:'#f00',strokeWeight:3
+      });
+      selectedFeature = feature;
+      const b = new google.maps.LatLngBounds();
+      feature.getGeometry().forEachLatLng(ll=>b.extend(ll));
+      map.fitBounds(b);
+      refreshMarkers();
+    }
+
+    function clearSelection() {
+      currentCommunity = null;
+      if (selectedFeature) map.data.revertStyle(selectedFeature);
+      selectedFeature = null;
+      map.data.setStyle(f=>defaultStyle);
+      markerCluster.clearMarkers();
+    }
+
+    function refreshMarkers() {
+      if (!markerCluster) return;
+      const active = Array.from(
+        document.querySelectorAll('.controls input:checked'),
+        i=>i.value
+      );
+      const toShow = [];
+      if (currentCommunity) {
+        active.forEach(cat=>{
+          markers[cat].forEach(m=>{
+            if (m.community===currentCommunity) toShow.push(m);
+          });
+        });
+      }
+      markerCluster.clearMarkers();
+      markerCluster.addMarkers(toShow);
+    }
+  </script>
+</body>
+</html>
