@@ -17,9 +17,11 @@ ChiFoodScape Website (All Maps): [ChiFoodScape](https://oliviadavis593.github.io
 A per-neighborhood clustered view with type toggles (Real and Junk) and on-click zoom/filter.  
 **Try it:** [V2 Interactive Store Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v2.html)  
 
-| Map (v2) | Map (v2) |
-|:---------------------:|:--------------:|
-| <img width="1045" alt="Screenshot 2025-06-15 at 4 43 29 PM" src="https://github.com/user-attachments/assets/8ff47629-15ad-435b-8734-01efbbf3dfef" /> | <img width="1128" alt="Screenshot 2025-06-15 at 4 44 27 PM" src="https://github.com/user-attachments/assets/ff221686-b572-40d9-923c-aaaa08cdafd2" />
+| Map (v2) | Map (v2) | Map (v2) |
+|:---------------------:|:--------------:|:--------------:
+| <img width="1218" alt="Screenshot 2025-06-16 at 11 19 35 PM" src="https://github.com/user-attachments/assets/c583b3fe-3b3f-4aa7-833d-dd31aa2a55dd" /> |<img width="770" alt="Screenshot 2025-06-16 at 10 57 50 PM" src="https://github.com/user-attachments/assets/414ae5b6-acc4-4882-b231-8e05784fd65f" /> |<img width="785" alt="Screenshot 2025-06-16 at 11 21 45 PM" src="https://github.com/user-attachments/assets/a6ca6774-c438-4b9b-a6d9-118636c24c7e" />
+
+
 
 
 
