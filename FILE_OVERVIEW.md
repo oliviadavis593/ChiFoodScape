@@ -6,7 +6,7 @@
 | `01e_clean_filtered_grocery_stores.ipynb` | Loads export from portal (2,300 rows), deduplicates to ~1,600 true stores. |
 | `02_access_score.ipynb`                   | (Optional) Computes access scores per ZIP/community. Useful in V2.         |
 | `03_visualizations.ipynb`                 | Basic map with color-coded pins using Folium + MarkerCluster.              |
-| `03_visualizations_by_zip_v1.ipynb`       | ZIP-level summary: counts real, junk, unclassified grocery stores.         |
+| `03_visualizations_by_zip_v1.ipynb`       | ZIP-level summary: counts real, junk and grocery stores.         |
 | `clean_urban_ag_sites.ipynb`              | Prepares urban agriculture dataset. Not used in V1 but retained.           |
 
 ### 📌 Future Notebooks (Planned)

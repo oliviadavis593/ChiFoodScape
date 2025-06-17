@@ -14,7 +14,7 @@ ChiFoodScape Website (All Maps): [ChiFoodScape](https://oliviadavis593.github.io
 ---
 
 ### v2 Interactive Store Map  
-A per-neighborhood clustered view with type toggles (Real, Junk, Unclassified) and on-click zoom/filter.  
+A per-neighborhood clustered view with type toggles (Real and Junk) and on-click zoom/filter.  
 **Try it:** [V2 Interactive Store Map](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v2.html)  
 
 | Map (v2) | Map (v2) |
@@ -67,7 +67,7 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 ### ✅ v1: Grocery Store Mapping  
 - Load & clean inspection data  
 - Flag real vs. junk vs. unclassified  
-- Deduplicate by name/address  
+- Deduplicate by name/address
 - Manual edge-case review  
 - **Interactive Map v1** (Folium + MarkerCluster)  
 - Community-level **Choropleth** & **Access Score**  
@@ -118,12 +118,10 @@ In **v3**, we’ll move from community-averaged counts to a **street-network cov
 | `01d_clean_grocery_stores.ipynb`              | Clean, deduplicate, and classify grocery stores                  |
 | `03_visualizations.ipynb`                     | Build interactive map with clustering                            |
 | `04_geo_join_by_area.ipynb`                   | Spatially join stores to community areas                         |
-| `05_unclassified_review.ipynb`                | Export unclassified stores per neighborhood for review           |
 | `05_junk_review.ipynb`                        | Export junk stores per neighborhood for review                   |
 | `05_real_review.ipynb`                        | Export real stores per neighborhood for review                   |
 | `06_choropleth_by_area.ipynb`                 | Create choropleth showing store density                          |
 | `07_generate_access_scores.ipynb`             | Render choropleth of access scores per area                      |
-| `07_merge_unclassified_reviewed_csvs.ipynb`   | Merge manually reviewed unclassified stores                      |
 | `07_merge_junk_reviewed_csvs.ipynb`           | Merge manually reviewed junk stores                              |
 | `clean_urban_ag_sites.ipynb`                  | Refine and clean urban agriculture site data                     |
 
@@ -165,10 +163,9 @@ Each map relies on a chain of notebooks. Here's how to run the full pipeline:
 
 **Run Order**:
 1. `01d_clean_grocery_stores.ipynb` ← cleans, deduplicates, and classifies stores  
-2. `05_unclassified_review.ipynb` ← exports unclassified stores by community for manual review  
+2. `05_unclassified_review.ipynb` ← exports unclassified stores by community for manual review
 3. *(Manual Step)*: Review the CSVs in `data/unclassified_review/`  
-4. `07_merge_unclassified_reviewed_csvs.ipynb` ← updates original dataset with reviewed labels  
-5. `03_visualizations.ipynb` ← builds interactive map with color-coded clustering by store type  
+4. `03_visualizations.ipynb` ← builds interactive map with color-coded clustering by store type  
 
 ---
 
