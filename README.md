@@ -68,7 +68,7 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 
 ### ✅ v1: Grocery Store Mapping  
 - Load & clean inspection data  
-- Flag real vs. junk vs. unclassified  
+- Flag real vs. junk 
 - Deduplicate by name/address
 - Manual edge-case review  
 - **Interactive Map v1** (Folium + MarkerCluster)  
@@ -165,9 +165,7 @@ Each map relies on a chain of notebooks. Here's how to run the full pipeline:
 
 **Run Order**:
 1. `01d_clean_grocery_stores.ipynb` ← cleans, deduplicates, and classifies stores  
-2. `05_unclassified_review.ipynb` ← exports unclassified stores by community for manual review
-3. *(Manual Step)*: Review the CSVs in `data/unclassified_review/`  
-4. `03_visualizations.ipynb` ← builds interactive map with color-coded clustering by store type  
+2. `03_visualizations.ipynb` ← builds interactive map with color-coded clustering by store type  
 
 ---
 
