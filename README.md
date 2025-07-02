@@ -24,7 +24,7 @@ A per-neighborhood clustered view with type toggles (Real and Junk) and on-click
 
 ---
 
-### v1 Interactive Store Map  
+### v1 Interactive Store Map [Deprecated -> replaced by v2 Interactive Store Map]
 Original Folium + MarkerCluster implementation (static clusters across the whole city).  
 **Try it:** [Store Map v1](https://oliviadavis593.github.io/ChiFoodScape/grocery_stores_chicago_map_v1.html)  
 
