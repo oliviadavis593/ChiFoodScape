@@ -22,9 +22,6 @@ A per-neighborhood clustered view with type toggles (Real and Junk) and on-click
 | <img width="1218" alt="Screenshot 2025-06-16 at 11 19 35 PM" src="https://github.com/user-attachments/assets/c583b3fe-3b3f-4aa7-833d-dd31aa2a55dd" /> |<img width="770" alt="Screenshot 2025-06-16 at 10 57 50 PM" src="https://github.com/user-attachments/assets/414ae5b6-acc4-4882-b231-8e05784fd65f" /> |<img width="785" alt="Screenshot 2025-06-16 at 11 21 45 PM" src="https://github.com/user-attachments/assets/a6ca6774-c438-4b9b-a6d9-118636c24c7e" />
 
 
-
-
-
 ---
 
 ### v1 Interactive Store Map  
@@ -78,7 +75,9 @@ ChiFoodScape filters, classifies, and reviews stores to build a **“reality map
 - Per-community clusters with type toggles  
 - GeoJSON overlay + click-to-zoom/filter  
 - Custom icons for each store type  
-- Configurable API key via `docs/config.js`  
+- Configurable API key via `docs/config.js`
+- Manual review of junk and real store classifications (v4 finalized)
+- Merged final audit results across all community areas
 
 ---
 
@@ -137,7 +136,8 @@ In **v3**, we’ll move from community-averaged counts to a **street-network cov
 | `docs/grocery_stores_chicago_map_v2.html`      | v2 Neighborhood-click interactive store map         |
 | `docs/grocery_choropleth_by_area.html`         | Store density choropleth by community area          |
 | `docs/access_score_choropleth.html`            | Grocery access score choropleth                     |
-| `data/cleaned/grocery_stores_cleaned_v3.csv`   | Cleaned & classified store dataset                  |
+| `data/cleaned/grocery_stores_cleaned_v3.csv`[Deprecated]   | Cleaned & classified store dataset      |
+| `data/cleaned/grocery_stores_cleaned_v4.csv`   | Final cleaned, reviewed, and merged store dataset   |
 | `data/geo/community_areas.geojson`             | Chicago community area boundaries                   |
 
 ---
